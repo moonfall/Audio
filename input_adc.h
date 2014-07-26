@@ -39,6 +39,7 @@
 class AudioInputAnalog : public AudioStream
 {
 public:
+        AudioInputAnalog() : AudioStream(0, NULL) { }
         AudioInputAnalog(unsigned int pin) : AudioStream(0, NULL) { begin(pin); }
         virtual void update(void);
         void begin(unsigned int pin);
