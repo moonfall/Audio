@@ -40,6 +40,7 @@ public:
 	void begin(void) { begin(false); }
 	void stop(void) { m_enabled=false; }
 	uint16_t Dpp(void);
+	uint32_t update_completed_at;
 private:
 	audio_block_t *inputQueueArray[1];
 	bool m_enabled;

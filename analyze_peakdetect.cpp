@@ -46,6 +46,7 @@ void AudioPeak::update(void)
 		if(d>max) max=d;
 	} while (p < end);
 	release(block);
+	update_completed_at = micros();
 }
 
 void AudioPeak::begin(bool noReset)
@@ -56,6 +57,7 @@ void AudioPeak::begin(bool noReset)
 		max=-32767;
 	}
 	m_enabled=true;
+	update_completed_at = 0;
 }
 uint16_t AudioPeak::Dpp(void)
 {
